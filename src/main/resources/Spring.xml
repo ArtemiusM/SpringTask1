@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+ 	   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 	   http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <bean id="app" class="ua.epam.spring.hometask.App">
+        <!--<constructor-arg ref="client"/>-->
+        <!--<constructor-arg ref="fileEventLogger"/>-->
+        <!--<constructor-arg ref="loggerMap"/>-->
+        <!--<property name="defaultLogger" ref="#{T(com.epam.spring.Event).isDay()? fileEventLogger : consoleEventLogger}" />-->
+
+    </bean>
+
+    <bean id="jsonDataLoader" class="ua.epam.spring.hometask.utils.JsonDataLoader">
+
+    </bean>
+
+    <bean id="auditoriumDAOImpl" class="ua.epam.spring.hometask.DAO.AuditoriumDAOImpl">
+        <property name="auditoriumsSet" value="#{jsonDataLoader.loadAuditoriums()}"/>
+    </bean>
+
+    <!--<bean id="client" class="com.epam.spring.Client"-->
+          <!--p:greeting="${greeting}"-->
+          <!--c:fullname="${name}">-->
+        <!--<constructor-arg index="0" value="${id}"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="event" class="com.epam.spring.Event" scope="prototype">-->
+        <!--<constructor-arg>-->
+            <!--<bean class="java.util.Date"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg ref="dateFormat"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>-->
+
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:client.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="ignoreResourceNotFound" value="true"/>-->
+        <!--<property name="systemPropertiesMode">-->
+            <!--<util:constant-->
+                    <!--static-field="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.SYSTEM_PROPERTIES_MODE_OVERRIDE"/>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="monitor" class="com.epam.spring.util.Monitor"/>-->
+    <!--<bean id="awared" class="com.epam.spring.util.AwareBean" init-method="init"/>-->
+
+</beans>

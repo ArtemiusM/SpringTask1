@@ -20,6 +20,10 @@ public class AuditoriumDAOImpl implements AuditoriumDAO {
     }
 //    TODO create auditoriumSet setter
 
+    public static void setAuditoriumsSet(Set<Auditorium> auditoriumsSet) {
+        AuditoriumDAOImpl.auditoriumsSet = auditoriumsSet;
+    }
+
     /**
      * Getting all auditoriums from the system
      *

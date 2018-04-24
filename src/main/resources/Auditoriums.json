@@ -1,0 +1,8 @@
+{"auditoriums" : [
+{"name": "Auditorium100", "numberOfSeats": "20", "vipSeats": [ "1", "2", "3", "4", "5" ]},
+{"name": "Auditorium101", "numberOfSeats": "20", "vipSeats": [ "1", "2", "3", "4", "5" ]},
+{"name": "Auditorium102", "numberOfSeats": "50", "vipSeats": [ "1", "2", "3", "4", "5", "10", "11", "12", "13", "14" ]},
+{"name": "Auditorium103", "numberOfSeats": "50", "vipSeats": [ "1", "2", "3", "4", "5", "10", "11", "12", "13", "14" ]},
+{"name": "Auditorium104", "numberOfSeats": "50", "vipSeats": [ "1", "2", "3", "4", "5", "10", "11", "12", "13", "14" ]},
+{"name": "Auditorium105", "numberOfSeats": "100", "vipSeats": [ "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" ]}
+]}
