@@ -22,10 +22,13 @@
 
     </bean>
 
-    <bean id="auditoriumDAOImpl" class="ua.epam.spring.hometask.DAO.AuditoriumDAOImpl">
-        <property name="auditoriumsSet" value="#{jsonDataLoader.loadAuditoriums()}"/>
+    <bean id="auditoriumDAOImpl" class="ua.epam.spring.hometask.DAO.AuditoriumDAOImpl" depends-on="jsonDataLoader">
+        <property name="auditoriumsSet" value="#{jsonDataLoader.auditoriumsCached}"/>
     </bean>
 
+    <bean id="eventDAOImpl" class="ua.epam.spring.hometask.DAO.EventDAOImpl" depends-on="jsonDataLoader">
+        <property name="eventSet" value="#{jsonDataLoader.eventsCached}"/>
+    </bean>
     <!--<bean id="client" class="com.epam.spring.Client"-->
           <!--p:greeting="${greeting}"-->
           <!--c:fullname="${name}">-->

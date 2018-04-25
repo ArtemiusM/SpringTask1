@@ -12,6 +12,11 @@ public class EventDAOImpl implements EventDAO{
 
 
     private static Set<Event> eventSet;
+
+    public static void setEventSet(Set<Event> eventSet) {
+        EventDAOImpl.eventSet = eventSet;
+    }
+
     /**
      * Saving new object to storage or updating existing one
      *
@@ -57,7 +62,7 @@ public class EventDAOImpl implements EventDAO{
      * @return collection of objects
      */
     public @Nonnull
-    Collection<Event> getAll(){
+    Set<Event> getAll(){
         Set<Event> eventSetCopy = new HashSet<>();
         for(Event e : eventSet){
             eventSetCopy.add(e.clone());
