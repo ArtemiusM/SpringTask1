@@ -70,4 +70,13 @@ public class EventDAOImpl implements EventDAO{
         return eventSetCopy;
     }
 
+    @Override
+    public Event getByName(String name) {
+        for(Event e : eventSet){
+            if(e.getName().equals(name)){
+                return e;
+            }
+        }
+        return null;
+    }
 }

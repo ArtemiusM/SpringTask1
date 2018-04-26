@@ -10,7 +10,7 @@
  	   http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-    <bean id="app" class="ua.epam.spring.hometask.App">
+    <bean id="app" class="ua.epam.spring.hometask.App" depends-on="jsonDataLoader">
         <!--<constructor-arg ref="client"/>-->
         <!--<constructor-arg ref="fileEventLogger"/>-->
         <!--<constructor-arg ref="loggerMap"/>-->
@@ -23,11 +23,15 @@
     </bean>
 
     <bean id="auditoriumDAOImpl" class="ua.epam.spring.hometask.DAO.AuditoriumDAOImpl" depends-on="jsonDataLoader">
-        <property name="auditoriumsSet" value="#{jsonDataLoader.auditoriumsCached}"/>
+        <property name="auditoriumsSet" value="#{jsonDataLoader.getAuditoriums()}"/>
     </bean>
 
     <bean id="eventDAOImpl" class="ua.epam.spring.hometask.DAO.EventDAOImpl" depends-on="jsonDataLoader">
-        <property name="eventSet" value="#{jsonDataLoader.eventsCached}"/>
+        <property name="eventSet" value="#{jsonDataLoader.getEvents()}"/>
+    </bean>
+
+    <bean id="eventServiceImpl" class="ua.epam.spring.hometask.service.EventServiceImpl" depends-on="eventDAOImpl">
+        <property name="eventDAO" ref="eventDAOImpl"/>
     </bean>
     <!--<bean id="client" class="com.epam.spring.Client"-->
           <!--p:greeting="${greeting}"-->

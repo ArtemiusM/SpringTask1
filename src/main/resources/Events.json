@@ -61,6 +61,27 @@
         {"date" : "14.06.2018" , "time" : "10:00" , "auditorium" : "Auditorium105"},
         {"date" : "14.06.2018" , "time" : "15:00" , "auditorium" : "Auditorium105"},
         {"date" : "14.06.2018" , "time" : "19:00" , "auditorium" : "Auditorium105"},
-        {"date" : "14.06.2018" , "time" : "21:00" , "auditorium" : "Auditorium105"} ]}
+        {"date" : "14.06.2018" , "time" : "21:00" , "auditorium" : "Auditorium105"} ]},
+
+    { "name": "Stalker",
+      "basePrice": "2.0",
+      "rating" : "MID",
+      "airDates" :
+      [ { "date" : "16.06.2018" , "time" : ["10:00", "15:00", "19:00", "21:00"]},
+        { "date" : "18.06.2018" , "time" : ["10:00", "15:00", "19:00", "21:00"]},
+        { "date" : "20.06.2018" , "time" : ["10:00", "15:00", "19:00", "21:00"]}],
+      "auditoriums" :
+      [ {"date" : "16.06.2018" , "time" : "10:00" , "auditorium" : "Auditorium102"},
+        {"date" : "16.06.2018" , "time" : "15:00" , "auditorium" : "Auditorium102"},
+        {"date" : "16.06.2018" , "time" : "19:00" , "auditorium" : "Auditorium102"},
+        {"date" : "16.06.2018" , "time" : "21:00" , "auditorium" : "Auditorium102"},
+        {"date" : "18.06.2018" , "time" : "10:00" , "auditorium" : "Auditorium102"},
+        {"date" : "18.06.2018" , "time" : "15:00" , "auditorium" : "Auditorium102"},
+        {"date" : "18.06.2018" , "time" : "19:00" , "auditorium" : "Auditorium102"},
+        {"date" : "18.06.2018" , "time" : "21:00" , "auditorium" : "Auditorium102"},
+        {"date" : "20.06.2018" , "time" : "10:00" , "auditorium" : "Auditorium102"},
+        {"date" : "20.06.2018" , "time" : "15:00" , "auditorium" : "Auditorium102"},
+        {"date" : "20.06.2018" , "time" : "19:00" , "auditorium" : "Auditorium102"},
+        {"date" : "20.06.2018" , "time" : "21:00" , "auditorium" : "Auditorium102"} ]}
   ]
 }

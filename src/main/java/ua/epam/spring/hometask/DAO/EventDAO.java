@@ -9,5 +9,5 @@ import ua.epam.spring.hometask.domain.Ticket;
  */
 
 public interface EventDAO extends DomainObjectDAO<Event> {
-
+    Event getByName(String name);
 }

@@ -25,17 +25,25 @@ public class JsonDataLoader {
     private static Set<Auditorium> auditoriumsCached;
     private static Set<Event> eventsCached;
 
-    public static Set<Auditorium> getAuditoriumsCached() {
-        return auditoriumsCached;
-    }
-
-    public static Set<Event> getEventsCached() {
-        return eventsCached;
-    }
-
     public JsonDataLoader(){
         loadAuditoriums();
         loadEvents();
+    }
+
+    public static Set<Auditorium> getAuditoriums() {
+        Set<Auditorium> auditoriumsCopy = new HashSet<>();
+        for(Auditorium a : auditoriumsCached){
+            auditoriumsCopy.add(a.clone());
+        }
+        return auditoriumsCopy;
+    }
+
+    public static Set<Event> getEvents() {
+        Set<Event> eventsCopy = new HashSet<>();
+        for(Event e : eventsCached){
+            eventsCopy.add(e.clone());
+        }
+        return eventsCopy;
     }
 
 
@@ -131,16 +139,16 @@ public class JsonDataLoader {
                     LocalTime localTime = LocalTime.parse(currAuditoriumObj.get("time").toString(), timeFormatter);
                     LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
                     String auditoriumName = currAuditoriumObj.get("auditorium").toString();
-                    Auditorium auditorium = getByName("auditoriumName");
+                    Auditorium auditorium = getByName(auditoriumName);
                     auditoriums.put(localDateTime, auditorium);
                 }
                 
-//                Set<Long> vipSeats = (Set<Long>) vipSeatsArray.stream().map((s) -> Long.parseLong(s.toString())).collect(Collectors.toSet());
-//
                 Event eventObj = new Event();
                 eventObj.setName(name);
                 eventObj.setBasePrice(basePrice);
                 eventObj.setRating(rating);
+                eventObj.setAuditoriums(auditoriums);
+                eventObj.setAirDates(airDates);
                 events.add(eventObj);
             }
 
